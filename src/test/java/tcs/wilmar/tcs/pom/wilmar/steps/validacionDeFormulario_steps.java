@@ -35,13 +35,13 @@ public class validacionDeFormulario_steps {
 	public void readEcxel_and_fill_one_form(int arg1) throws InterruptedException, IOException {
 		
 		
-	    File src=new File("/tcs.pom.wilmar/src/test/resources/ecxelFiles/dataEcxel.xlsx");
+	    File src=new File("src/test/resources/ecxelFiles/dataEcxel.xlsx");
 	    FileInputStream fis=new FileInputStream(src);
 	    XSSFWorkbook srcBook= new XSSFWorkbook(fis);
 	    XSSFSheet sourceSheet = srcBook.getSheetAt(0);
 
 	    
-	    XSSFRow sourceRow = sourceSheet.getRow(arg1);
+	    XSSFRow sourceRow = sourceSheet.getRow(arg1-1);
 	    
 	    XSSFCell username=sourceRow.getCell(0);
 	    XSSFCell password=sourceRow.getCell(1);

@@ -1,7 +1,7 @@
 package tcs.wilmar.tcs.pom.wilmar.pageObjects;
 
 
-import java.io.IOException;
+
 
 import com.mifmif.common.regex.Generex;
 
