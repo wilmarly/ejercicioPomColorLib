@@ -1,0 +1,43 @@
+  Examples: 
+      | usuario | contrasena | required      | select   | multiple_select | url            | e-mail                | password | confirm_password | minimum_field_size | maximum_field_size | number | ip            | date         | date_earlier |
+      | "demo"  | "demo"     | "unnecessary" | "Tennis" | "Football"      | "colorLib.com" | "palomino@hotmail.es" | "demo"   | "demo"           | "6666666"          | "11"               | "9.0"  | "192.168.1.1" | "2019-11-12" | "2012/09/10" |
+
+      
+      
+      
+      
+      
+      	@When("^Diligenciar Formulario uno\"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"  \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"  \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+	public void diligenciar_Formulario_uno(String arg1, String arg2, String arg3, String arg4, String arg5, String arg6,
+			String arg7, String arg8, String arg9, String arg10, String arg11, String arg12, String arg13) throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+		step.diligenciar_Formulario_uno(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12,
+				arg13);
+	}
+	
+	
+	
+		@Step
+	public void diligenciar_Formulario_uno(String required, String select, String multiple_select, String url, String mail, 
+			String password, String confirm_password, String minimum_field_size, String maximum_field_size, String number, 
+			String ip, String date, String date_earlier) throws InterruptedException {
+		
+		PgObj.diligenciar_campo_required(required);
+		PgObj.selectSport();
+		PgObj.optionSport(select);
+		PgObj.multipleSelectSport(multiple_select);
+		PgObj.diligenciar_campo_Url(url);
+		//PgObj.diligenciar_campo_email(mail);
+		PgObj.generar_correo_aleatorio();
+		PgObj.diligenciar_campo_password(password);
+		PgObj.diligenciar_campo_confirm_password(confirm_password);;
+		//PgObj.diligenciar_campo_minimum_size(minimum_field_size);
+		PgObj.generar_telefono_aleatorio();
+		PgObj.diligenciar_campo_maximum_size(maximum_field_size);
+		PgObj.diligenciar_campo_number(number);
+		PgObj.diligenciar_campo_ip(ip);
+		PgObj.diligenciar_campo_date(date);
+		PgObj.diligenciar_campo_date_earlier(date_earlier);
+		Thread.sleep(36000);
+		
+				}
